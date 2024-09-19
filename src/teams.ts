@@ -13,7 +13,7 @@ export function setupTeams(element: HTMLDivElement, round: Round) {
             `
               <div class="teams">
                 <div class="team">
-                  <img src="${teamShield}" class="shield" alt="Arrow right" />
+                  <img src="./shield-${game.team_home_id}.svg" class="shield" alt="Arrow right" />
                   <span>${game.team_home_name}</span>
                 </div>
                 <div class="score">
@@ -23,7 +23,7 @@ export function setupTeams(element: HTMLDivElement, round: Round) {
                 </div>
                 <div class="team">
                   <span>${game.team_away_name}</span>
-                  <img src="${teamShield}" class="shield" alt="Arrow right" />
+                  <img src="./shield-${game.team_away_id}.svg" class="shield" alt="Arrow right" />
                 </div>
               </div>
             `
