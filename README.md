@@ -26,10 +26,10 @@ Required! Install git, node and yarn (or npm).
 
 ```bash
 # Clone Repository
-$ git clone https://github.com/RodrigoSaantos/sevn-esportes.git
+$ git clone https://github.com/RodrigoSaantos/senv-esportes.git
 
 # Go to folder classroom
-$ cd sevn/
+$ cd senv-esportes/
 
 # Install Dependencies
 $ yarn
