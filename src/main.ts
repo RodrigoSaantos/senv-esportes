@@ -3,6 +3,7 @@ import { getRounds, next_round, previous_round, Round } from './utils.ts'
 import arrowLeft from './assets/arrow_left.svg'
 import arrowRight from './assets/arrow_right.svg'
 import { setupTeams } from './teams.ts'
+import { updateButtonState } from './pagination.ts'
 
 export const APP_ELEMENT = document.querySelector<HTMLDivElement>('#app')!
 
@@ -40,27 +41,11 @@ export const ROUND_NUMBER_ELEMENT = document.querySelector<HTMLSpanElement>('#ro
 const rounds = await getRounds();
 let currentRound = rounds[0];
 
-function updateButtonState() {
-  const roundIndex = rounds.findIndex(round => round.round === currentRound.round);
-
-  if (roundIndex === 0) {
-    PREVIOUS_ROUND.disabled = true;
-  } else {
-    PREVIOUS_ROUND.disabled = false;
-  }
-
-  if (roundIndex === rounds.length - 1) {
-    NEXT_ROUND.disabled = true;
-  } else {
-    NEXT_ROUND.disabled = false;
-  }
-}
-
 function setRound(round: Round) {
   currentRound = round;
   ROUND_NUMBER_ELEMENT.textContent = `RODADA ${currentRound.round}`;
   setupTeams(TEAMS_WRAPPER_ELEMENT, currentRound);
-  updateButtonState()
+  updateButtonState(currentRound, rounds, PREVIOUS_ROUND, NEXT_ROUND);
 }
 
 setRound(currentRound);
