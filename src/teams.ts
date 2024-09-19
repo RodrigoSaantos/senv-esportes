@@ -1,4 +1,3 @@
-import teamShield from "./assets/team_shield.svg";
 import X from "./assets/x.svg";
 import { Round } from "./utils";
 
